@@ -747,7 +747,7 @@ async function init() {
   const minDate  = allDates.reduce((a,b) => a < b ? a : b);
   const maxDate  = allDates.reduce((a,b) => a > b ? a : b);
   document.getElementById('navMeta').textContent = `5월 ~ 6월 2025`;
-  document.getElementById('heroSub').textContent = `${minDate} ~ ${maxDate} · ${keys.length}개 유닛 · model: yolov8n-640-Tr10280`;
+  document.getElementById('heroSub').textContent = `${minDate} ~ ${maxDate} · ${keys.length}개 유닛`;
   document.getElementById('footerDate').textContent = `Report generated: ${new Date().toLocaleDateString('ko-KR')}`;
 
   loadBar.style.width = '90%';
