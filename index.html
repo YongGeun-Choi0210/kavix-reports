@@ -673,10 +673,10 @@ function renderDetailTable(units, unitIdx) {
         <td colspan="8" style="text-align:center;color:var(--dim)">— 데이터 없음 —</td>
       </tr>`;
     }
-    const aCls = r.A >= 99.9 ? 'perfect' : r.A >= 99.5 ? '' : 'warn-cell';
-    const pill = r.A >= 99.9 ? '<span class="pill pill-good">PERFECT</span>'
-               : r.A >= 99.0 ? '<span class="pill pill-good">GOOD</span>'
-               : r.A >= 97.0 ? '<span class="pill pill-warn">WARN</span>'
+    const rCls = r.R >= 99.9 ? 'perfect' : r.R >= 99.5 ? '' : 'warn-cell';
+    const pill = r.R >= 99.9 ? '<span class="pill pill-good">PERFECT</span>'
+               : r.R >= 99.0 ? '<span class="pill pill-good">GOOD</span>'
+               : r.R >= 97.0 ? '<span class="pill pill-warn">WARN</span>'
                :                '<span class="pill pill-bad">POOR</span>';
     return `<tr>
       <td>${r.date}</td>
@@ -687,9 +687,9 @@ function renderDetailTable(units, unitIdx) {
       <td style="color:${r.fp>5?'var(--warn)':r.fp>0?'var(--text)':'var(--dim)'}">${r.fp}</td>
       <td style="color:${r.fn>5?'var(--warn)':r.fn>0?'var(--text)':'var(--dim)'}">${r.fn}</td>
       <td>${r.P}</td>
-      <td>${r.R}</td>
+      <td class="${rCls}">${r.R} ${pill}</td>
       <td>${r.F1}</td>
-      <td class="${aCls}">${r.A} ${pill}</td>
+      <td>${r.A}</td>
     </tr>`;
   }).join('');
 
